@@ -225,9 +225,16 @@ async function main() {
     console.log("═══════════════════════════════════════════════════════════");
     console.log("\n📚 Week 1 总结 - 你现在应该能回答这些问题：");
     console.log("  Q: Token 是什么？为什么 Prompt 工程师要关注 token 数量？");
+    // 是处理文字的最小单位，token和费用相关
+    // 上下文过多（导致token过多）会自动截断，丢失重要信息。并且模型处理时间和token数量正相关
     console.log("  Q: temperature=0 和 temperature=1 分别用在什么场景？");
+    // ./note1.md
+    // temperature=0回答固定，可以用在编程、检索回复等场景。temperature=1思维发散，适合创意，设计场景
     console.log("  Q: system/user/assistant 三种角色分别是什么作用？");
+    // ./note3.md
     console.log("  Q: Few-shot 和 Chain of Thought 分别解决什么问题？");
+    // Few-shot示例，给示例比给规则更有效。模型会模仿示例的风格和结构
+    // Chain of Thought 思考，让模型先想再说，输出质量通常更高，尤其是复杂任务
     console.log("\n⏭️  进入 Week 2：Tool Calling → week2/01-tool-calling.js");
     console.log("   你将学习：让模型「调用」你写的函数，这是 Agent 的心脏");
   } catch (error) {

@@ -180,7 +180,7 @@ async function experiment4_maxTokens() {
   console.log("   finish_reason='stop' 表示正常结束");
   console.log("   finish_reason='length' 表示被 max_tokens 截断");
 
-  const prompt = [{ role: "user", content: "请详细介绍一下人工智能的历史，至少写500字" }];
+  const prompt = [{ role: "user", content: "请详细介绍一下人工智能的历史，至少写100字" }];
 
   // 正常长度
   const result1 = await client.chat.completions.create({
@@ -231,9 +231,13 @@ async function main() {
     console.log("─────────────────────────────────────────────────────────");
     console.log("📚 课后思考题（不需要写代码，想清楚就行）：");
     console.log("  1. 如果你要做一个[每次回答都一样]的客服机器人，temperature 设多少？");
+    // 0
     console.log("  2. 如果你要做一个[每次都给出不同创意]的文案生成器，temperature 设多少？");
+    // 1
     console.log("  3. 为什么 system prompt 对 Agent 系统如此重要？");
+    // 可以设置性格和角色，不同的 ststem prompt生成结果相差很大
     console.log("  4. max_tokens 设置太小有什么危险？设置太大又有什么代价？");
+    // 太小会异常截断，不友好。太大浪费token
     console.log("─────────────────────────────────────────────────────────");
     console.log("\n⏭️  完成后进入 Day 3-4：实现多轮对话 → week1/02-chat.js");
   } catch (error) {
